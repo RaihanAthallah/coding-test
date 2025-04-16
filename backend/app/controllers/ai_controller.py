@@ -10,7 +10,7 @@ router = APIRouter()
 @router.post("/", response_model=AIResponse)
 async def ai_chat(request: AIRequest):
     try:
-        response = await generate_ai_response(session_id=request.session_id, question=request.question)
+        response = generate_ai_response(session_id=request.session_id, question=request.question)
         return JSONResponse(
             status_code=200,
             content={
