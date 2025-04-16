@@ -1,5 +1,6 @@
 import json
 import os
+from app.exceptions.sales_exception import DataProcessingException
 
 def load_dummy_data() -> dict:
     try:
@@ -9,8 +10,8 @@ def load_dummy_data() -> dict:
         with open(dummy_file, "r") as f:
             return json.load(f)
     except FileNotFoundError:
-        raise AIProcessingException("Dummy data file not found")
+        raise DataProcessingException("Dummy data file not found")
     except json.JSONDecodeError:
-        raise AIProcessingException("Error decoding JSON from dummy data file")
+        raise DataProcessingException("Error decoding JSON from dummy data file")
     except Exception as e:
-        raise AIProcessingException(f"An unexpected error occurred: {str(e)}")
+        raise DataProcessingException(f"An unexpected error occurred: {str(e)}")
