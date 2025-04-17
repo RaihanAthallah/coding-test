@@ -1,5 +1,5 @@
 import ChatMessage from "../../components/ChatMessage";
-import { useChatbot, useSessionID } from "./app";
+import { useChatbot, useSessionID } from "../../hooks/chatbotHooks";
 
 export default function ChatbotPage() {
   const { sessionID, loading: sessionLoading, error } = useSessionID(); // Replace with your session ID retrieval logic
