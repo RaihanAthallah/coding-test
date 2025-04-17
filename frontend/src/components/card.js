@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 
-const SalesCard = ({ name, role, region, totalDeals, totalClients }) => {
+export default function SalesCard({ name, role, region, totalDeals, totalClients }) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-800 dark:bg-gray-800 text-gray-100 dark:text-gray-100">
       <div className="px-6 py-4">
         <h3 className="text-xl font-semibold">{name}</h3>
         <p className="text-gray-500">{role}</p>
@@ -20,6 +20,4 @@ const SalesCard = ({ name, role, region, totalDeals, totalClients }) => {
       </div>
     </div>
   );
-};
-
-export default SalesCard;
+}
