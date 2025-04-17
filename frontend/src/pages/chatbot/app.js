@@ -54,7 +54,7 @@ export function useChatbot(session_id) {
 
       const data = await res.json();
 
-      setMessages((prev) => [...prev, { text: data?.answer || "No response from bot", isUser: false }]);
+      setMessages((prev) => [...prev, { text: data?.data || "No response from bot", isUser: false }]);
     } catch (err) {
       console.error("Error:", err);
       setMessages((prev) => [...prev, { text: "Something went wrong.", isUser: false }]);
