@@ -1,40 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Coding Test Project
 
-## Getting Started
+This project consists of a **FastAPI** backend and a **Next.js** frontend. You can run them locally using Python and Node.js, or alternatively using Dock
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Disclaimer
+
+This project does not use a .env file for configuration. All sensitive or environment-specific settings (such as database credentials, API keys, etc.) are hardcoded directly into the project. This is done to simplify the setup process, making it easier to run locally or in a containerized environment without needing additional configuration files.
+
+---
+
+## 💻 Frontend (Next.js)
+
+### Requirements
+
+- Node.js 20.17.0
+- npm
+
+### Steps to Run Locally
+
+1. Navigate to the frontend directory:
+
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Access
+
+- App: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🐳 Docker Alternative
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Steps to Run with Docker
+
+1. Navigate to the main project directory:
+
+   ```bash
+   cd coding-test
+   ```
+
+2. Build and run the containers:
+   ```bash
+   docker-compose up --build
+   ```
+
+### Access
+
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+- Backend: [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 📂 Project Structure
+
+```
+coding-test/
+│
+│
+├── frontend/        # Next.js frontend
+│   └── src/          # Frontend source files
+│       ├── components/  # React components
+│       ├── hooks/       # Custom React hooks
+│       ├── pages/       # Next.js pages
+│       ├── styles/      # CSS styles
+│
+│
+└── docker-compose.yml
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 📎 Notes
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Ensure ports **3000** and **8000** are free before running.
+- Use Docker for consistent environments and easier deployment.
